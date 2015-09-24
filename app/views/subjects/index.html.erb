@@ -1,0 +1,20 @@
+<h4>Add subjects</h4>
+<%= link_to "Add Subject", new_subject_path%>
+<table>
+	<tr>
+		<th><strong>Title </strong></th>
+		<th><strong>Created At </strong></th>
+		<th><strong>Updated At </strong></th>
+	</tr>
+<% @subjects.each do |subject|%>
+	
+	<tr>
+		<td><%= link_to "#{subject.title}"%></td> 
+		<td><%= subject.created_at%></td>
+		<td><%= subject.updated_at%></td>
+		<td><%= link_to "Delete", subject_path(subject.id), method: :delete, data:{confirm: "Are you sure?"}%></td>
+	</tr>
+	
+<%end%>
+</table>
+
