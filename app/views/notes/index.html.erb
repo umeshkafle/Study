@@ -1,10 +1,16 @@
 
+#<% @subjects.each do |subject|%>
+	<tr>
+		<td><%= link_to "#{subject.title}",subject_notes_path(subject)%></td> 
+		
+	</tr>
+	
+<%end%>
 
 <% @notes.each do |note|%><br/>
 	<strong>Title: </strong>
 	<%= note.title%></br>
 	<strong>Content: </strong>
 	<%= note.content%><br/>
-	<%= link_to "Delete", subject_note_path(@subject, note.id), method: :delete, data:{confirm: "Are you sure?"} %>
-
+	
 <%end%>

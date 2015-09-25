@@ -25,11 +25,6 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @subject = Subject.find(params[:subject_id])
-    @note  = @subject.notes.find(params[:id])
-    if @subject.destroy
-      redirect_to(:action => :index)
-    end
   end
 
   def notes_params
