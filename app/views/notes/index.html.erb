@@ -1,2 +1,10 @@
-<h1>Notes#index</h1>
-<p>Find me in app/views/notes/index.html.erb</p>
+
+
+<% @notes.each do |note|%><br/>
+	<strong>Title: </strong>
+	<%= note.title%></br>
+	<strong>Content: </strong>
+	<%= note.content%><br/>
+	<%= link_to "Delete", subject_note_path(@subject, note.id), method: :delete, data:{confirm: "Are you sure?"} %>
+
+<%end%>

@@ -1,0 +1,13 @@
+<h3>Form for notes</h3>
+<%= form_for :note, url: {action: 'create'} do |f|%>
+	<p>
+		<%= f.label :title%>
+		<%= f.text_field :title, placeholder: "Enter your title here"%>
+	</p>
+
+	<p>
+		<%= f.label :content %>
+		<%= f.text_area :content, placeholder: "Enter content"%>
+	</p>
+	<%= f.submit ("Save notes")%>
+<%end%>

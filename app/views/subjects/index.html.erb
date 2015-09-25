@@ -9,10 +9,11 @@
 <% @subjects.each do |subject|%>
 	
 	<tr>
-		<td><%= link_to "#{subject.title}"%></td> 
+		<td><%= link_to "#{subject.title}",subject_notes_path(subject)%></td> 
 		<td><%= subject.created_at%></td>
 		<td><%= subject.updated_at%></td>
 		<td><%= link_to "Delete", subject_path(subject.id), method: :delete, data:{confirm: "Are you sure?"}%></td>
+		<td><%= link_to "Add Notes", new_subject_note_path(subject)%>
 	</tr>
 	
 <%end%>
