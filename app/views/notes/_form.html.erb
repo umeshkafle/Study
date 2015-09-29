@@ -1,5 +1,5 @@
 <h3>Form for notes</h3>
-<%= form_for :note, :html => {:multipart => true} url: {action: 'create'} do |f|%>
+<%= form_for :note, :html => {:multipart => true}, url: {action: 'create'} do |f|%>
 	<p>
 		<%= f.label :title%>
 		<%= f.text_field :title, placeholder: "Enter your title here"%>
