@@ -1,10 +1,10 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all{where(:user_id=>current_user.id)}
   end
 
   def show
-    @subjects = Subject.find(params[:id])
+    @subject = Subject.find(params[:id])
   end
 
   def new
@@ -25,10 +25,11 @@ class SubjectsController < ApplicationController
   end
 
   def destroy
-    @subject = Subject.find(params[:id])
+    @subject=Subject.find(params[:id])
     if @subject.destroy
       redirect_to subjects_path
     end
+    
   end
 
   def subject_params

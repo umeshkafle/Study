@@ -1,5 +1,5 @@
 <h4>Form to add subject</h4>
-<%= form_for :subject, url:{action: 'create'} do |f|%>
+<%= form_for @subject do |f|%>
 	<p>
 		<%= f.label :title%>
 		<%= f.text_field :title, placeholder: "Enter your subject name"%>

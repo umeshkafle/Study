@@ -1,6 +1,10 @@
+<ul class="nav nav-pills">
+<li><%=form_for :search, url:("/search") do |f|%>
+	<%= f.text_field :title%> <%= submit_tag ("Search")%>
+<%end%></li>
 
-<%= link_to "Add Subject", new_subject_path%>
-<table>
+<li role="presentation" class="active"><%= link_to "Add Subject", new_subject_path%></li></ul>
+<table class="table table-striped">
 	<tr>
 		<th><strong>Title </strong></th>
 		<th><strong>Created At </strong></th>
@@ -9,7 +13,7 @@
 <% @subjects.each do |subject|%>
 	
 	<tr>
-		<td><%= link_to "#{subject.title}",subject_notes_path(subject)%></td> 
+		<td><%= link_to "#{subject.title}", subject_notes_path(subject) %></td> 
 		<td><%= subject.created_at%></td>
 		<td><%= subject.updated_at%></td>
 		<td><%= link_to "Delete", subject_path(subject.id), method: :delete, data:{confirm: "Are you sure?"}%></td>

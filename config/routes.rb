@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get 'search/show'
+
   resources :subjects do
     resources :notes
 
   end
    devise_for :users
+
+   get 'search' => 'search#show'
+   post 'search'=> 'search#show'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

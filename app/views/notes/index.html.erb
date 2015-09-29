@@ -1,16 +1,24 @@
-
-#<% @subjects.each do |subject|%>
+<div class="col-md-10">
+<% @subjects.each do |subject|%>
 	<tr>
 		<td><%= link_to "#{subject.title}",subject_notes_path(subject)%></td> 
 		
 	</tr>
 	
 <%end%>
+</div>
+<table class="table table=stripped">
+	<tr>
+		<th>Title</th>
+		<th>Content</th>
+	</tr>
 
-<% @notes.each do |note|%><br/>
-	<strong>Title: </strong>
-	<%= note.title%></br>
-	<strong>Content: </strong>
-	<%= note.content%><br/>
+<% @notes.each do |note|%>
+	<tr>
+		<td><%= note.title%></td>
+		<td><%= note.content%></td>
+		<td><%= link_to "Home", subjects_path%></td>
+		<td><%= link_to "Detete", subject_note_path(@subject, note.id), method: :delete, data: {confirm: "Are you sure ?"}%></td>
 	
 <%end%>
+</table>
