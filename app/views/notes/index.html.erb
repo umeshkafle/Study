@@ -17,7 +17,7 @@
 	<tr>
 		<td><%= note.title%></td>
 		<td><%= note.content%></td>
-		<td><%= link_to "Home", subjects_path%></td>
+		
 		<td><%= link_to "Detete", subject_note_path(@subject, note.id), method: :delete, data: {confirm: "Are you sure ?"}%></td>
 	
 <%end%>
