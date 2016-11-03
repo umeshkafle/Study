@@ -7,18 +7,34 @@
 	
 <%end%>
 </div>
+<% @notes.each do |note|%>
 <table class="table table=stripped">
 	<tr>
 		<th>Title</th>
-		<th>Content</th>
+		<td><%= note.title%></td>
 	</tr>
 
-<% @notes.each do |note|%>
 	<tr>
-		<td><%= note.title%></td>
+		<th>Content</th>
 		<td><%= note.content%></td>
-		
+	</tr>
+
+		<div>
+			<tr>
+				<th>Attachment</th>
+			</tr>
+			<tr>
+				<td><%= note.folder%></td>
+			</tr>
+		</div>
+
 		<td><%= link_to "Detete", subject_note_path(@subject, note.id), method: :delete, data: {confirm: "Are you sure ?"}%></td>
+	</tr>
+
+
+	
+		
+	
 	
 <%end%>
 </table>

@@ -56,4 +56,6 @@ end
 gem 'devise', '~> 3.5.2'
 gem 'bootstrap-sass'
 gem "paperclip", "~> 4.3"
+gem 'activeadmin', github: 'activeadmin'
+
 
